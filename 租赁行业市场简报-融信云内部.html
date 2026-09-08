@@ -1,0 +1,1044 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>租赁行业市场与数字化建设简报 · 融信云内部</title><style>
+:root{--bg:#f2f4f3;--paper:#fbfcfb;--ink:#24302c;--muted:#66736d;--line:#d7e0db;--accent:#2f5d50;--accent-soft:#e6efeb}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;-webkit-font-smoothing:antialiased}
+.deck{height:100%;display:flex;flex-direction:column;background:radial-gradient(900px 420px at 0% 0%,rgba(47,93,80,.07),transparent 55%),radial-gradient(700px 360px at 100% 8%,rgba(122,101,72,.05),transparent 50%),var(--bg)}
+.topbar{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:12px 28px;font-size:12px;color:var(--muted)}
+.stage{flex:1 1 auto;position:relative;overflow:hidden;margin:0 20px 12px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(36,48,44,.05)}
+.slide{position:absolute;inset:0;padding:36px 44px 44px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .25s ease,transform .25s ease,visibility .25s;overflow:auto}
+.slide.active{opacity:1;visibility:visible;transform:none}
+.eyebrow{font-size:13px;color:var(--accent);letter-spacing:.06em;margin-bottom:10px;font-weight:600}
+h1{font-size:clamp(24px,3vw,36px);font-weight:650;line-height:1.25;margin-bottom:12px}
+h2{font-size:clamp(18px,2.2vw,26px);font-weight:650;line-height:1.3;margin-bottom:12px}
+h3{font-size:14.5px;font-weight:650;color:var(--accent);margin-bottom:6px}
+.lead{font-size:15px;color:var(--muted);line-height:1.65;max-width:52em}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pill{font-size:12px;color:var(--muted);border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:6px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.card p,.note,li{font-size:13.5px;line-height:1.58;color:var(--ink)}
+.muted,.card .muted{color:var(--muted)}
+ul.clean{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:4px}
+ul.clean li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+table.plain{width:100%;border-collapse:separate;border-spacing:0;font-size:12px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:4px}
+table.plain th,table.plain td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45}
+table.plain th{background:#2a4540;color:#f3f7f5;font-weight:600}
+table.plain tr:last-child td{border-bottom:none}
+table.compact{font-size:11.5px}
+table.compact th,table.compact td{padding:6px 7px}
+.callout{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--accent-soft);border:1px solid #c5d7cf;font-size:13px;line-height:1.55;color:#35574c}
+.note{margin-top:8px;font-size:11.5px;color:var(--muted);word-break:break-all}
+.footerbar{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:8px 28px 16px;gap:12px}
+.progress-wrap{flex:1;height:3px;background:#dce4e0;border-radius:99px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:var(--accent);transition:width .2s ease}
+.nav{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}
+.nav button{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit}
+.nav button:hover{border-color:var(--accent);color:var(--accent)}
+.hint{font-size:12px;color:var(--muted)}
+.chapter{display:flex;flex-direction:column;justify-content:center;min-height:100%}
+.toc{margin-top:10px}
+.toc-block{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.toc-block h3{margin-bottom:6px}
+.toc-block p{font-size:13px;color:var(--muted);line-height:1.55}
+.arch{display:grid;gap:6px;margin-top:8px}
+.arch-row{display:grid;grid-template-columns:120px 1fr;gap:8px;align-items:stretch}
+.arch-label{background:#2a4540;color:#f3f7f5;border-radius:8px;padding:10px 8px;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;text-align:center}
+.arch-body{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12.5px;line-height:1.5}
+.more{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+.more-toggle{appearance:none;border:1px solid var(--line);background:#fff;color:var(--accent);font:inherit;font-size:12px;font-weight:600;border-radius:999px;padding:5px 11px;cursor:pointer}
+.more-toggle:hover{border-color:var(--accent);background:var(--accent-soft)}
+.more-panel{display:none;margin-top:8px;padding:11px 13px;background:#f7faf8;border:1px solid var(--line);border-radius:12px;font-size:12.5px;line-height:1.55;color:#3a4a44}
+.more.open .more-panel{display:block}
+.more-panel ul{margin:4px 0 0 1.1em}
+.more-panel li{margin:3px 0}
+.more-panel .src{margin-top:8px;font-size:11px;color:var(--muted);word-break:break-all}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.tab-btn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--muted);font:inherit;font-size:12px;border-radius:8px;padding:5px 10px;cursor:pointer}
+.tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.viz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px}
+.viz-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.viz-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;position:relative;overflow:hidden}
+.viz-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.viz-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.ico{flex:0 0 auto;width:36px;height:36px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ico.dark{background:#2a4540;color:#f3f7f5}
+.viz-card h3{margin:0;font-size:14px}
+.viz-card p,.viz-card li{font-size:12.5px;line-height:1.5;color:var(--muted)}
+.metric-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.metric{background:#f7faf8;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+.metric .n{font-size:20px;font-weight:700;color:var(--accent);line-height:1.2}
+.metric .l{font-size:11.5px;color:var(--muted);margin-top:4px}
+.metric .sub{font-size:11px;color:#8a9690;margin-top:2px}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 9px;color:var(--ink)}
+.flow{display:flex;align-items:stretch;gap:6px;margin:8px 0 12px;flex-wrap:wrap}
+.flow-step{flex:1;min-width:120px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+.flow-step strong{display:block;font-size:13px;color:var(--accent);margin-bottom:4px}
+.flow-step span{font-size:11.5px;color:var(--muted);line-height:1.4}
+.flow-arrow{align-self:center;color:var(--accent);font-weight:700;font-size:16px}
+.line-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.line-list li{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;line-height:1.5}
+.line-list .num{width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.pain-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:6px}
+.pain-list li{display:grid;grid-template-columns:72px 1fr;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+.pain-list .tag{font-size:11.5px;font-weight:700;color:#fff;background:#2a4540;border-radius:6px;padding:4px 6px;text-align:center;align-self:start;line-height:1.3}
+.pain-list .body{font-size:12.5px;line-height:1.5}
+.pain-list .body strong{color:var(--ink)}
+.pain-list .opp{display:block;margin-top:3px;color:var(--accent);font-size:12px}
+.cat-board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.cat-col{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-height:280px}
+.cat-top{padding:14px 14px 10px;background:linear-gradient(160deg,#2a4540 0%,#3d6b5f 100%);color:#f3f7f5}
+.cat-top .badge{display:inline-block;font-size:11px;opacity:.85;margin-bottom:6px;letter-spacing:.04em}
+.cat-top h3{color:#fff;font-size:16px;margin:0 0 6px}
+.cat-top p{font-size:12px;line-height:1.45;opacity:.9;margin:0}
+.cat-body{padding:12px 14px 14px;flex:1}
+.cat-body ul{margin:0;padding-left:1.1em;font-size:12.5px;line-height:1.55;color:var(--ink)}
+.cat-body li{margin:5px 0}
+.cat-foot{padding:8px 14px 12px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--accent);background:#f7faf8}
+.stack-table{width:100%;font-size:12px;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:6px}
+.stack-table th,.stack-table td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.45}
+.stack-table th{background:#2a4540;color:#f3f7f5;width:22%}
+.stack-table tr:last-child td{border-bottom:none}
+.lease-type{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px}
+.lease-type .item{display:grid;grid-template-columns:40px 1fr;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 12px}
+.lease-type .item .ico{width:40px;height:40px}
+.vs-wrap{display:grid;grid-template-columns:1fr 48px 1fr;gap:0;margin-top:10px;align-items:stretch}
+.vs-col{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.vs-col.fin .vs-hero{background:linear-gradient(145deg,#2a4540,#3a6358)}
+.vs-col.ops .vs-hero{background:linear-gradient(145deg,#4a5d4e,#6b7f68)}
+.vs-hero{padding:14px 14px 12px;color:#f3f7f5}
+.vs-hero .badge{font-size:11px;letter-spacing:.06em;opacity:.8;margin-bottom:4px}
+.vs-hero h3{margin:0 0 4px;font-size:18px;color:#fff}
+.vs-hero p{margin:0;font-size:12px;line-height:1.45;opacity:.9}
+.vs-mid{display:flex;align-items:center;justify-content:center}
+.vs-badge{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(47,93,80,.25)}
+.vs-rows{padding:8px 0}
+.vs-row{display:grid;grid-template-columns:76px 1fr;gap:8px;padding:8px 12px;border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.45}
+.vs-row:last-child{border-bottom:none}
+.vs-row .k{color:var(--accent);font-weight:650;font-size:12px}
+.vs-row .v{color:var(--ink)}
+.principle{margin:4px 0 12px;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,#1f3a34 0%,#2f5d50 55%,#3d6b5f 100%);color:#f3f7f5;border:1px solid #1a302b;box-shadow:0 8px 22px rgba(31,58,52,.18);position:relative;overflow:hidden}
+.principle::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06)}
+.principle .badge{display:inline-block;font-size:11px;letter-spacing:.08em;opacity:.85;margin-bottom:6px}
+.principle h3{margin:0 0 6px;font-size:17px;color:#fff}
+.principle p{margin:0;font-size:12.5px;line-height:1.55;opacity:.92;max-width:58em}
+.principle .chip-row{margin-top:10px}
+.principle .chip{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);color:#f3f7f5}
+.pillar-board{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.pillar-top{padding:12px 14px 10px;color:#f3f7f5}
+.pillar-top.a{background:linear-gradient(150deg,#2a4540,#3d6b5f)}
+.pillar-top.b{background:linear-gradient(150deg,#3a4f45,#5a7264)}
+.pillar-top .badge{font-size:11px;letter-spacing:.06em;opacity:.85;margin-bottom:4px}
+.pillar-top h3{margin:0 0 4px;font-size:16px;color:#fff}
+.pillar-top p{margin:0;font-size:12px;line-height:1.45;opacity:.9}
+.pillar-body{padding:11px 14px 12px;flex:1}
+.pillar-body ul{margin:0;padding-left:1.1em;font-size:12.5px;line-height:1.55}
+.pillar-body li{margin:4px 0}
+.pillar-foot{padding:8px 14px 11px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--accent);background:#f7faf8}
+.digi-line{margin-top:10px;padding:9px 12px;border-radius:10px;background:#fff;border:1px dashed #b7c9c0;font-size:12.5px;line-height:1.5;color:#35574c}
+.digi-line strong{color:var(--accent)}
+.tab-detail{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:2px}
+.tab-detail h3{margin:0 0 6px;font-size:14.5px}
+.tab-detail .cols{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin-top:8px}
+.tab-detail .box{background:#f7faf8;border:1px solid var(--line);border-radius:10px;padding:10px 11px}
+.tab-detail .box h4{margin:0 0 5px;font-size:12px;color:var(--accent);font-weight:650}
+.tab-detail .box p,.tab-detail .box li{font-size:12.5px;line-height:1.5;color:var(--ink);margin:0}
+.tab-detail .box ul{margin:0;padding-left:1.1em}
+.opp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.opp-card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px 11px}
+.opp-card h4{margin:0 0 4px;font-size:12.5px;color:var(--accent);font-weight:650}
+.opp-card p{margin:0;font-size:12px;line-height:1.45;color:var(--muted)}
+.hi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:6px}
+.vs-col.jl .vs-hero{background:linear-gradient(145deg,#243d38,#2f5d50)}
+.vs-col.rl .vs-hero{background:linear-gradient(145deg,#4a5548,#6a7a68)}
+.vs-row.compact{grid-template-columns:68px 1fr;padding:6px 11px;font-size:12px}
+.vs-note{margin-top:8px;font-size:11.5px;color:var(--muted);text-align:center}
+
+@media(max-width:900px){.slide{padding:24px 16px 32px}.grid-2,.grid-3,.viz-grid,.viz-grid-3,.cat-board,.metric-row,.vs-wrap,.pillar-board,.tab-detail .cols,.opp-grid,.hi-grid{grid-template-columns:1fr}.vs-mid{display:none}.arch-row{grid-template-columns:1fr}.flow-arrow{display:none}.pain-list li{grid-template-columns:1fr}}
+@media print{.topbar,.footerbar{display:none}.slide{position:relative;opacity:1!important;visibility:visible!important;transform:none;page-break-after:always;height:auto;overflow:visible}.more-panel,.tab-panel{display:block!important}}
+</style></head><body><div class="deck"><div class="topbar"><div>融信云内部交流 · 市场与数字化建设简报</div><div id="sectionLabel"></div></div><div class="stage" id="stage">
+
+<section class="slide active" data-section="封面目录">
+<p class="eyebrow">神州数码融信云 · 内部交流</p>
+<h1>租赁行业市场与数字化建设简报</h1>
+<p class="lead">面向内部管理与销售团队：系统介绍金租客户与业务、数字化建设现状、招采决策机制，以及可关注的项目建设方向。金租与融租并行观察（约 5:5）。页内可展开「More」查看细则与出处。</p>
+<div class="toc" style="margin-top:14px">
+<div class="toc-block"><h3>一、市场客户介绍</h3><p>金租整体情况、分布、分类与分层 · 近五年监管制度与趋势 · 业务发展现状及未来（本源总则 → 五篇大文章 → 高端制造与补充机会）</p></div>
+<div class="toc-block"><h3>二、金租数字化能力现状</h3><p>数据中心 · IT 架构与系统分类 · 建设厂商 · 信息化阶段 · 痛点 · AI 建设需求</p></div>
+<div class="toc-block"><h3>三、招投标方式与决策链条</h3><p>采购主体模式 · 常见招标方式 · 预算收紧下的评标取向</p></div>
+<div class="toc-block"><h3>四、未来项目建设机会点</h3><p>监管报送 · 一表通 · 信创 · 租赁物管理 · 数据治理 · AI · 数据安全</p></div>
+</div>
+<div class="meta-row"><span class="pill">口径侧重 2025 末 / 2026 公开信息与内部调研</span><span class="pill">← → 翻页 · 点 More / 标签切换细节</span></div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<div class="chapter">
+<p class="eyebrow">第一部分</p>
+<h1>市场客户介绍</h1>
+<p class="lead">建立对金租市场主体、监管约束与业务演进的共同认知，为后续数字化与商机判断提供基础。</p>
+</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">主体分野</p>
+<h2>金融租赁与融资租赁</h2>
+<div class="vs-wrap">
+<div class="vs-col jl">
+<div class="vs-hero">
+<div class="badge">FINANCIAL LEASING · 金租</div>
+<h3>金融租赁公司</h3>
+<p>金监体系非银金融机构 · 牌照稀缺</p>
+</div>
+<div class="vs-rows">
+<div class="vs-row compact"><span class="k">监管单位</span><span class="v">国家金融监督管理总局及其派出机构</span></div>
+<div class="vs-row compact"><span class="k">注册方式</span><span class="v">须经金监总局批准设立；名称含「金融租赁」受牌照约束</span></div>
+<div class="vs-row compact"><span class="k">法律定位</span><span class="v">非银行金融机构</span></div>
+<div class="vs-row compact"><span class="k">最低资本</span><span class="v">一次性实缴，最低 <strong>10 亿元</strong>（2024 年办法）</span></div>
+<div class="vs-row compact"><span class="k">数量特征</span><span class="v">牌照稀缺；存量优化、集中度提升</span></div>
+<div class="vs-row compact"><span class="k">负债展业</span><span class="v">金融债、同业拆借等；负债工具相对丰富</span></div>
+<div class="vs-row compact"><span class="k">信息化</span><span class="v">项目制为主；常对齐发起行 / 金科与信创基线</span></div>
+</div>
+</div>
+<div class="vs-mid"><div class="vs-badge">VS</div></div>
+<div class="vs-col rl">
+<div class="vs-hero">
+<div class="badge">FINANCE LEASE CO. · 融租</div>
+<h3>融资租赁公司</h3>
+<p>地方金融组织 · 主体多、持续出清</p>
+</div>
+<div class="vs-rows">
+<div class="vs-row compact"><span class="k">监管单位</span><span class="v">省级地方金融管理部门实施监管；中央定规则、地方负责</span></div>
+<div class="vs-row compact"><span class="k">注册方式</span><span class="v">按地方金融组织登记 / 许可规则办理；无金融牌照</span></div>
+<div class="vs-row compact"><span class="k">法律定位</span><span class="v">地方金融组织；适用暂行办法及地方细则</span></div>
+<div class="vs-row compact"><span class="k">最低资本</span><span class="v">显著低于金租（内资试点 / 外资等口径不同）</span></div>
+<div class="vs-row compact"><span class="k">数量特征</span><span class="v">主体数量多；清理规范与头部集中并行</span></div>
+<div class="vs-row compact"><span class="k">负债展业</span><span class="v">不能吸收存款、发行金融债；更依赖股东与市场化债权</span></div>
+<div class="vs-row compact"><span class="k">信息化</span><span class="v">中小偏 SaaS / 轻量上云；大型融租亦有项目制</span></div>
+</div>
+</div>
+</div>
+<p class="vs-note">说明：本页对比的是两类<strong>机构主体</strong>（金租 / 融租），与后文「融资租赁 vs 经营租赁」业务结构差异不同。</p>
+<div class="more" data-more>
+<button type="button" class="more-toggle">More · 准入与主要出资人</button>
+<div class="more-panel">
+<div class="metric-row">
+<div class="metric"><div class="n">1亿 → 10亿</div><div class="l">最低注册资本</div><div class="sub">一次性实缴货币资本</div></div>
+<div class="metric"><div class="n">30% → ≥51%</div><div class="l">主要出资人持股</div><div class="sub">压实控股股东责任</div></div>
+</div>
+<div class="viz-grid" style="margin-top:10px">
+<div class="viz-card"><div class="viz-head"><span class="ico">规</span><h3>办法时点</h3></div><p>金融监管总局令 2024 年第 6 号<br/>2024-11-01 施行，废止 2014 年版</p></div>
+<div class="viz-card"><div class="viz-head"><span class="ico">股</span><h3>主要出资人类型</h3></div>
+<div class="chip-row">
+<span class="chip">商业银行</span><span class="chip">适格制造企业</span><span class="chip">境外融租</span><span class="chip">国有资本投资运营</span><span class="chip">国有金融资本投资运营</span><span class="chip">监管认可其他</span>
+</div></div>
+</div>
+<table class="plain compact" style="margin-top:10px">
+<thead><tr><th>国有出资人类型</th><th>总资产门槛</th><th>注册资本门槛</th></tr></thead>
+<tbody>
+<tr><td>国有资本投资、运营公司</td><td>≥ 3000 亿元</td><td>≥ 30 亿元</td></tr>
+<tr><td>国有金融资本投资、运营公司</td><td>≥ 5000 亿元</td><td>≥ 50 亿元</td></tr>
+</tbody>
+</table>
+<p style="margin-top:8px;font-size:12.5px;line-height:1.5">股权结构 ≠「纯银行子公司」：银行系主导、产业系、国资平台与银行混合持股并存。举例：江苏金租为交通控股与银行等股东结构，不宜表述为「国资委直接持股」。</p>
+<p class="src">出处：国务院公报《金融租赁公司管理办法》https://www.gov.cn/gongbao/2024/issue_11706/202411/content_6987946.html</p>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">规模与分层</p>
+<h2>金租整体情况、分布与分层</h2>
+<div class="grid-3">
+<div class="card"><h3>资产规模</h3><p>2025 年末行业总资产约 <strong>5.23 万亿元</strong>，同比约 +7.9%（银行业协会《中国金融租赁行业发展报告（2026）》）。</p></div>
+<div class="card"><h3>经营家数</h3><p>正常经营约 <strong>64–65 家</strong>（协会 / 媒体口径略有出入）；与牌照名单口径需区分。</p></div>
+<div class="card"><h3>集中度</h3><p>「千亿俱乐部」约 <strong>16 家</strong>，合计资产约 3.54 万亿，占行业七成以上；中信金租 2025 年跻身。</p></div>
+</div>
+<table class="plain compact" style="margin-top:10px">
+<thead><tr><th>分层</th><th>资产量级（示意）</th><th>典型机构</th><th>信息化与采购含义</th></tr></thead>
+<tbody>
+<tr><td>第一梯队</td><td>约 3000 亿+</td><td>交银、国银、工银、招银</td><td>自建能力强；短名单与金科约束深；机船等经营性资产数字化领先</td></tr>
+<tr><td>第二梯队</td><td>约 1000–3000 亿</td><td>华夏、民生、浦银、江苏、中信、建信、农银等</td><td>专项业务系统与监管类项目更常见；预算分化明显</td></tr>
+<tr><td>腰部及以下</td><td>千亿以下</td><td>区域性 / 小型金租</td><td>预算紧、专项一事一议；切口宜小、验收边界宜清</td></tr>
+</tbody>
+</table>
+<div class="viz-grid-3" style="margin-top:12px">
+<div class="viz-card">
+<div class="viz-head"><span class="ico dark">构</span><h3>业务结构</h3></div>
+<p>直租余额 <strong>1.84 万亿</strong>（+21.05%，占租赁资产约 39.74%）；经营性租赁余额 <strong>1.07 万亿</strong>（+10.25%）。</p>
+<p style="margin-top:6px">算力租赁约 <strong>972.62 亿</strong>（+109.89%）；新型储能约 <strong>567.32 亿</strong>（+154.66%）；不良融资租赁资产率约 <strong>0.91%</strong>。</p>
+</div>
+<div class="viz-card">
+<div class="viz-head"><span class="ico dark">域</span><h3>地域分布</h3></div>
+<p>机构与资产主要集中于<strong>京津沪深粤</strong>及省会金融中心。</p>
+<p style="margin-top:6px">机船业务具有较强<strong>跨境与自贸区</strong>特征，区域集聚与资产属性高度相关。</p>
+</div>
+<div class="viz-card">
+<div class="viz-head"><span class="ico dark">资</span><h3>资本补充</h3></div>
+<p><strong>2024–2025</strong> 年多家金租完成增资（公开盘点合计增资规模较大）。</p>
+<p style="margin-top:6px">工银等注册资本居前，反映<strong>10 亿门槛</strong>与业务扩张双驱动。</p>
+</div>
+</div>
+<div class="more" data-more>
+<button type="button" class="more-toggle">More · 头部机构公开数据</button>
+<div class="more-panel">
+<ul>
+<li><strong>交银金租（2025 末）：</strong>总资产约 4563 亿；船队 434 艘、航运租赁资产约 1611 亿；机队 320 架、航空约 1012 亿；经营租赁资产占比约 53%；直租投放占比约 61%。</li>
+<li><strong>国银金租：</strong>总资产约 4335 亿；净利润约 50.3 亿；机队约 502 架；能源租赁投放同比高增。</li>
+<li><strong>工银金租：</strong>总资产约 4083 亿；注册资本公开口径居行业前列（约 330 亿量级）。</li>
+<li><strong>招银金租：</strong>总资产约 3253 亿；航空 / 航运 / 设备三大板块。</li>
+<li><strong>融租：</strong>主体多、持续出清与头部集中；IT 路径与金租分轨（SaaS vs 项目制）。头部融租亦有千亿级资产规模（行业资讯常见转载）。</li>
+<li><strong>千亿俱乐部跟踪：</strong>2025 末约 16 家；后续公开报道中银等亦有跻身动态，宜持续更新口径。</li>
+</ul>
+<p class="src">出处：银行业协会《发展报告（2026）》媒体通稿；交行 / 招行年报子公司披露；21 世纪经济报道等行业盘点。</p>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">监管制度</p>
+<h2>近五年适用于租赁行业的主要管理办法</h2>
+<p class="note" style="margin-bottom:6px">下表以金融租赁（金监体系）为主；融资租赁（地方金融组织）另附。监管数据类制度在第四章机会点展开。</p>
+<div class="tabs" data-tabs>
+<button type="button" class="tab-btn active" data-tab="t1">金租专属</button>
+<button type="button" class="tab-btn" data-tab="t2">银行业通用（适用金租）</button>
+<button type="button" class="tab-btn" data-tab="t3">融租附列</button>
+</div>
+<div class="tab-panel active" data-tab-panel="t1">
+<table class="plain compact">
+<thead><tr><th>时间</th><th>文件</th><th>文号</th><th>要点</th></tr></thead>
+<tbody>
+<tr><td>2021</td><td>《金融租赁公司项目公司管理办法》</td><td>银保监办发〔2021〕143号</td><td>规范项目公司（SPV）；租赁物正面管理基础</td></tr>
+<tr><td>2022</td><td>《关于加强金融租赁公司融资租赁业务合规监管有关问题的通知》</td><td>银保监办发〔2022〕12号</td><td>强化合规、限制不当业务领域</td></tr>
+<tr><td>2023</td><td>《关于促进金融租赁公司规范经营和合规管理的通知》</td><td>金规〔2023〕8号</td><td>公司治理、租赁物管理、聚焦主责主业</td></tr>
+<tr><td>2024-08</td><td>鼓励清单 / 负面清单 / 项目公司业务正面清单</td><td>金办发〔2024〕91号</td><td>清单制引导；正面清单增补集成电路、算力中心设备</td></tr>
+<tr><td>2024-11 施行</td><td>《金融租赁公司管理办法》</td><td>总局令2024年第6号</td><td>资本10亿、主要出资人≥51%；废止2014年版</td></tr>
+<tr><td>2025-01</td><td>《金融租赁公司监管评级办法》（修订）</td><td>—</td><td>五维评级；信息科技管理权重约10%</td></tr>
+<tr><td>2026-01 施行</td><td>《金融租赁公司融资租赁业务管理办法》</td><td>金规〔2025〕25号</td><td>业务全流程；管物；全流程信息系统（第57条等）</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tab-panel" data-tab-panel="t2">
+<table class="plain compact">
+<thead><tr><th>时间</th><th>文件</th><th>文号</th><th>要点</th></tr></thead>
+<tbody>
+<tr><td>2024-12</td><td>《银行保险机构数据安全管理办法》</td><td>金规〔2024〕24号</td><td>数据安全组织、分类分级、技术保护与问责（落稿时核对金租适用/集团传导口径）</td></tr>
+<tr><td>2025-03 施行</td><td>《金融机构合规管理办法》</td><td>—</td><td>含金租等非银；合规官与合规部门职责</td></tr>
+<tr><td>2025-06 施行</td><td>《银行业金融机构董事（理事）和高级管理人员任职资格管理办法》</td><td>总局令2025年第1号</td><td>董监高任职资格；废止2013年版</td></tr>
+</tbody>
+</table>
+<p class="note">说明：内部若称「数据安全93号文」，公开对应多为金规〔2024〕24号，引用前请核对文号。</p>
+</div>
+<div class="tab-panel" data-tab-panel="t3">
+<table class="plain compact">
+<thead><tr><th>时间</th><th>文件</th><th>要点</th></tr></thead>
+<tbody>
+<tr><td>2020</td><td>《融资租赁公司监督管理暂行办法》</td><td>中央定规则、地方实施；融租监管框架基础</td></tr>
+<tr><td>近年</td><td>各省地方金融条例 / 实施细则、清理规范类通知</td><td>出清与分类处置；报送与IT要求因地而异</td></tr>
+<tr><td>2025 前后</td><td>部分省市商租监管文件更新</td><td>行业观察认为地方融租规则有向金租监管导向靠拢趋势</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">监管现状与趋势</p>
+<h2>行业当前监管现状与趋势</h2>
+<p class="note" style="margin-bottom:4px">监管演进示意（近五年）</p>
+<div class="flow">
+<div class="flow-step"><strong>准入 / 指标</strong><span>资本、股东、杠杆等底线管理</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><strong>机构办法修订</strong><span>10 亿资本 · ≥51% 出资人</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><strong>清单制引导</strong><span>鼓励 / 负面 / 正面清单</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><strong>业务全流程</strong><span>25 号管物 + 全流程系统</span></div>
+</div>
+<div class="grid-2">
+<div class="viz-card">
+<div class="viz-head"><span class="ico dark">现</span><h3>现状：三轨并行</h3></div>
+<ul class="line-list">
+<li><span class="num">1</span><span>机构管理：以 2024 年《金融租赁公司管理办法》夯实资本与股东责任</span></li>
+<li><span class="num">2</span><span>业务边界：金规〔2023〕8 号 + 鼓励 / 负面 / 正面清单明确「有所为、有所不为」</span></li>
+<li><span class="num">3</span><span>操作规范：金规〔2025〕25 号细化尽调—审批—合同—租后，突出以租赁物为核心</span></li>
+<li><span class="num">4</span><span>科技与治理同步加严：评级含信息科技（约 10%）；合规、董监高、数据安全制度并行</span></li>
+</ul>
+</div>
+<div class="viz-card">
+<div class="viz-head"><span class="ico dark">趋</span><h3>趋势：三条主线</h3></div>
+<ul class="line-list">
+<li><span class="num">1</span><span>回归「融资 + 融物」本源：压缩通道与不当结构，提升直租、经营性与真租赁物管理</span></li>
+<li><span class="num">2</span><span>产业引导：设备更新、绿色低碳、算力与集成电路等高端制造 / 新质生产力</span></li>
+<li><span class="num">3</span><span>数据与系统留痕：EAST / 报表、租赁物数据、数据安全与信息科技能力影响评级与检查</span></li>
+<li><span class="num">4</span><span>结论：合规与科技正从「配套支持」变为展业与持续经营能力的组成部分</span></li>
+<li><span class="num">5</span><span>行业观察：短期合规成本上升；长期质量提升、头部集中，中小更多深耕农机、专精特新等细分</span></li>
+</ul>
+</div>
+</div>
+<div class="more" data-more>
+<button type="button" class="more-toggle">More · 25号硬条款与监管数据点名</button>
+<div class="more-panel">
+<ul>
+<li>25 号：适格尽调、独立评估、禁低值高买；租后定位 / 监控与价值覆盖；评处分离；经营性租赁原则上至少每年重估；员工行为管理；核心风控不得外包；自动化审批须模型治理；第 57 条全流程信息科技系统。</li>
+<li>监管数据体系：1104、EAST、人行大集中 / 金数、利率报备、征信、反洗钱，以及区域特色与总行报表；银行「一表通」全面推广对共享型金租有传导影响。</li>
+</ul>
+<p class="src">25号：https://www.gov.cn/gongbao/2026/issue_12606/202603/content_7061750.html</p>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">业务模式</p>
+<h2>当前主要业务类型与业务模式</h2>
+<table class="plain compact">
+<thead><tr><th>模式</th><th>基本含义</th><th>当前监管与经营含义</th><th>对系统能力的要求</th></tr></thead>
+<tbody>
+<tr><td>直接租赁</td><td>出租人向厂商购入新设备租给承租人</td><td>监管引导提升占比；对接设备更新</td><td>采购交付、权属、保险、租后状态全链路</td></tr>
+<tr><td>售后回租</td><td>承租人将自有物卖给出租人再租回</td><td>严格规范；禁不当通道与低值高买</td><td>估值独立、用途监测 / 受托支付</td></tr>
+<tr><td>经营性租赁</td><td>会计上纳入经营租赁；侧重资产运营</td><td>机船等基本盘；余额已破万亿</td><td>台账、残值、退租处置、收益核算</td></tr>
+<tr><td>厂商 / 零售租赁</td><td>与厂商经销商合作批量获客</td><td>普惠与设备下沉重要路径</td><td>渠道门户、批量进件、回购与合作机构管理</td></tr>
+<tr><td>联合租赁等</td><td>多家按份额共同开展</td><td>独立审批、风险自担；通道空间收窄</td><td>份额台账、信息共享、报送口径一致</td></tr>
+</tbody>
+</table>
+<div class="callout">业务本质：典型结构为《买卖合同》+《融资租赁合同》（两个合同、三方当事人），兼具融资与融物属性；租赁物既是业务载体，也是风险缓释与监管关注对象。直租侧重「购进租出」、回租侧重盘活流动性；25 号对直租付至出卖人、大额回租受托支付等提出更细要求。经营性租赁侧重资产运营——与融资租赁结构差异见下一页。</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">融资租赁与经营租赁</p>
+<h2>融资租赁与经营租赁的差异</h2>
+<div class="vs-wrap">
+<div class="vs-col fin">
+<div class="vs-hero">
+<div class="badge">FINANCE LEASE</div>
+<h3>融资租赁</h3>
+<p>以融通资金为主，租赁物是载体与担保</p>
+</div>
+<div class="vs-rows">
+<div class="vs-row"><span class="k">目的</span><span class="v">解决承租人设备购置资金需求</span></div>
+<div class="vs-row"><span class="k">常见结构</span><span class="v">直接租赁、售后回租等</span></div>
+<div class="vs-row"><span class="k">风险重心</span><span class="v">信用风险为主；物是缓释手段</span></div>
+<div class="vs-row"><span class="k">残值 / 期满</span><span class="v">多约定留购；残值风险相对可控</span></div>
+<div class="vs-row"><span class="k">典型资产</span><span class="v">产线设备、工程机械、医疗设备等</span></div>
+<div class="vs-row"><span class="k">系统重点</span><span class="v">合同放款、租金计划、权属、用途监测</span></div>
+</div>
+</div>
+<div class="vs-mid"><div class="vs-badge">VS</div></div>
+<div class="vs-col ops">
+<div class="vs-hero">
+<div class="badge">OPERATING LEASE</div>
+<h3>经营租赁</h3>
+<p>以资产使用与运营服务为主</p>
+</div>
+<div class="vs-rows">
+<div class="vs-row"><span class="k">目的</span><span class="v">承租人获得使用权；出租人经营资产</span></div>
+<div class="vs-row"><span class="k">常见结构</span><span class="v">机队 / 船队经营性出租、退租转租等</span></div>
+<div class="vs-row"><span class="k">风险重心</span><span class="v">资产价值、利用率、残值与处置风险更高</span></div>
+<div class="vs-row"><span class="k">残值 / 期满</span><span class="v">资产常收回再投放；重估与处置能力关键</span></div>
+<div class="vs-row"><span class="k">典型资产</span><span class="v">飞机、船舶、部分新能源车队等</span></div>
+<div class="vs-row"><span class="k">系统重点</span><span class="v">台账、监控、残值、退租处置、收益核算</span></div>
+</div>
+</div>
+</div>
+<div class="callout" style="margin-top:12px">监管口径提示：金规〔2025〕25 号将会计上纳入经营租赁科目核算的业务称为经营性租赁，并在租后、重估等方面提出更高要求；同一金租往往两类并存，系统能力需「融资交易 + 资产运营」两套都能支撑。</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">业务发展现状</p>
+<h2>业务发展现状：结构转型已有数据验证</h2>
+<div class="grid-2">
+<div class="card"><h3>本源化结构</h3><p class="muted">直租余额 1.84 万亿（+21%）；经营性租赁余额 1.07 万亿（+10%）。航空、航运、大型装备仍是基本盘。</p></div>
+<div class="card"><h3>新兴赛道高速增长</h3><p class="muted">算力租赁余额约 973 亿（约 +110%）；新型储能约 567 亿（约 +155%）。商业航天、低空经济等场景在拓展。</p></div>
+</div>
+<table class="plain compact" style="margin-top:10px">
+<thead><tr><th>机构</th><th>业务领域印象（公开 / 同业调研）</th></tr></thead>
+<tbody>
+<tr><td>国银金租</td><td>飞机、船舶、乘用车 / 商用车、新能源与高端设备</td></tr>
+<tr><td>交银金租</td><td>航空、航运、交通基建、能源电力、民生消费、设备制造</td></tr>
+<tr><td>江苏金租</td><td>高端装备、信息科技、大健康、汽车金融、工程机械、航运、产业金融；农机厂商租赁突出</td></tr>
+<tr><td>浦银金租</td><td>航空、航运、能源电力、先进制造、公用事业、基础设施；光伏等专项</td></tr>
+<tr><td>民生金租</td><td>商用 / 公务航空、船舶、车辆、设备</td></tr>
+<tr><td>华夏 / 招银</td><td>绿色租赁特色突出（光伏、绿航、新能源等）；招银航空航运设备三大板块</td></tr>
+<tr><td>工银金租</td><td>航空、海事航运、轨道交通与能源电力等境内大型设备；港航专业子公司布局突出</td></tr>
+<tr><td>建信金租</td><td>交通运输、制造业、电力民生等一般租赁；航空航运加速拓展，绿色 / 普惠转型并行</td></tr>
+<tr><td>中银金租</td><td>绿色低碳、先进制造与能源资源；航空航运与低空经济加速布局</td></tr>
+<tr><td>兴业金租</td><td>绿色租赁（风光新能源等）、科技与普惠设备、机船稳健起步</td></tr>
+<tr><td>农银金租</td><td>「三农」与绿色租赁特色突出；航空航运、新能源、科创制造</td></tr>
+<tr><td>永赢金租</td><td>小微租赁与厂商渠道、智能制造 / 现代产业、新能源与绿色交通、航空</td></tr>
+</tbody>
+</table>
+<div class="more" data-more>
+<button type="button" class="more-toggle">More · 代表性机构公开数据</button>
+<div class="more-panel">
+<ul>
+<li>华夏官网：2025 末绿色租赁余额 985.79 亿元；户用光伏余额约 540 亿、获客约 33 万户（评级报告口径）。</li>
+<li>招银：2025 年绿色投放约 643 亿、占总投放约 59%；绿色余额约 1148 亿（母行年报 / 媒体汇总）；2024 末社会责任报告披露绿色余额约 1449 亿、占租赁资产约 51%。</li>
+<li>交银：「机船管家」资产监控；航空风险监测系统等公开报道。</li>
+<li>江苏：乐租系列、农机厂商租赁；2024 设江苏法巴农科设备金租子公司；官网披露三农投放规模。</li>
+<li>工银：2025 末总资产约 4083 亿（母行年报）；航空 / 海事 / 境内综合三大板块；机队规模行业前列（评级口径）。</li>
+<li>农银：2025 末总资产约 1126 亿；绿色租赁余额约 658 亿；国产飞机机队与客户数量行业前列（母行年报口径）。</li>
+</ul>
+<p class="src">协会报告；华夏 hxfl.com.cn；江苏 jsleasing.cn；招银社会责任报告；工行 / 农行 / 交行年报。</p>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">未来趋势 · 总框架</p>
+<h2>未来业务发展趋势：总要求与双轨布局</h2>
+<div class="principle">
+<div class="badge">总要求 · 大趋势（非并列赛道）</div>
+<h3>回归租赁本源</h3>
+<p>五篇大文章、高端装备与制造等业务方向，均须符合「融资 + 融物」本源要求：提升直租与真租赁物占比，规范售后回租、压缩不当通道，强化经营性资产运营、租后监控、残值与处置能力。协会口径下直租与经营性余额已验证结构转型，数字化需同步支撑「管物」而非仅「管合同」。</p>
+<div class="chip-row">
+<span class="chip">直租与真租赁物</span>
+<span class="chip">规范回租</span>
+<span class="chip">经营性资产运营</span>
+<span class="chip">租后 · 残值 · 处置</span>
+</div>
+</div>
+<div class="pillar-board">
+<div class="pillar">
+<div class="pillar-top a">
+<div class="badge">业务方向 A</div>
+<h3>五篇大文章</h3>
+<p>政策与监管引导下的金融服务主线；合并为总板块，下分五条业务线展开</p>
+</div>
+<div class="pillar-body">
+<ul>
+<li><strong>科技金融</strong>：半导体设备、工业母机、AI 算力 / GPU 集群、检验检测</li>
+<li><strong>绿色金融</strong>：光伏、风电、储能、新能源车船</li>
+<li><strong>普惠金融</strong>：农机、工程机械、商用车、中小设备与厂商租赁</li>
+<li><strong>养老金融</strong>：康复护理、医院 / 康养设备（公开标杆相对少）</li>
+<li><strong>数字金融</strong>：对客数字化设备 + 对内数据 / 智能能力</li>
+</ul>
+</div>
+<div class="pillar-foot">下一页按五条线展开 · 标签切换查阅</div>
+</div>
+<div class="pillar">
+<div class="pillar-top b">
+<div class="badge">业务方向 B · 与 A 并列</div>
+<h3>高端装备与制造</h3>
+<p>设备更新与新质生产力落地赛道；与五篇大文章并列，非其下属条目</p>
+</div>
+<div class="pillar-body">
+<ul>
+<li><strong>国产大飞机 / 国产船舶与航运装备</strong></li>
+<li><strong>工业机器人与产线设备更新</strong></li>
+<li><strong>大型工程机械</strong></li>
+<li><strong>新兴场景</strong>：商业航天、低空经济等（有公开布局可观察，整体仍偏探索）</li>
+</ul>
+</div>
+<div class="pillar-foot">再下一页展开赛道 + 补充机会卡片</div>
+</div>
+</div>
+<div class="digi-line"><strong>数字化含义（总览）：</strong>本源化抬升对租赁物全生命周期、经营性台账与残值处置系统的要求；五篇大文章与高端制造则分别拉动高值物评估、绿色认定、批量渠道进件、医疗类准入，以及机船 / 产线类直租交付与物数据贯通。</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">未来趋势 · 五篇大文章</p>
+<h2>业务方向 A：五篇大文章</h2>
+<p class="note" style="margin-bottom:2px">合并为总板块观察；下表按五条线展开。各线展业仍须服从上一页「回归租赁本源」总要求。</p>
+<div class="tabs" data-tabs>
+<button type="button" class="tab-btn active" data-tab="f1">科技金融</button>
+<button type="button" class="tab-btn" data-tab="f2">绿色金融</button>
+<button type="button" class="tab-btn" data-tab="f3">普惠金融</button>
+<button type="button" class="tab-btn" data-tab="f4">养老金融</button>
+<button type="button" class="tab-btn" data-tab="f5">数字金融</button>
+</div>
+<div class="tab-panel active" data-tab-panel="f1">
+<div class="tab-detail">
+<h3>科技金融</h3>
+<p class="muted">半导体设备、工业母机、AI 算力 / GPU 集群、检验检测仪器等。协会公开口径：算力租赁余额约 973 亿、同比约 +110%，为近年增速最快的设备类赛道之一；正面清单亦增补算力中心设备、集成电路相关标的。</p>
+<div class="cols">
+<div class="box"><h4>代表性落点</h4><ul><li>兴业等布局 IDC / 半导体设备租赁</li><li>招银等公开涉及卫星等航天相关租赁探索</li><li>高值、技术迭代快的设备直租与厂商协同</li></ul></div>
+<div class="box"><h4>数字化含义</h4><p>高值物独立评估与估值模型；技术迭代下的残值与再投放；租后状态 / 利用率监测；与算力机房、厂商台账的数据衔接。</p></div>
+</div>
+</div>
+</div>
+<div class="tab-panel" data-tab-panel="f2">
+<div class="tab-detail">
+<h3>绿色金融</h3>
+<p class="muted">光伏、风电、储能、新能源车船及配套充换电等。协会口径新型储能余额约 567 亿、同比约 +155%；华夏 / 招银等绿色余额与投放占比已成公开对标样本，户用与分布式光伏呈现批量资产特征。</p>
+<div class="cols">
+<div class="box"><h4>代表性落点</h4><ul><li>华夏绿色租赁余额、户用光伏规模（公开评级 / 官网口径）</li><li>招银绿色投放占比；浦银等光伏专项</li><li>新能源车队、绿航与储能项目租赁</li></ul></div>
+<div class="box"><h4>数字化含义</h4><p>绿色认定与披露口径；批量电站 / 车队资产台账与监控；发电量、运营数据与风险预警联动；补贴与电费回款类场景的对账能力。</p></div>
+</div>
+</div>
+</div>
+<div class="tab-panel" data-tab-panel="f3">
+<div class="tab-detail">
+<h3>普惠金融</h3>
+<p class="muted">农机、工程机械、商用车、中小设备及厂商租赁渠道。强调下沉获客与批量进件，同时须守住租赁物真实性与合作机构管理边界。</p>
+<div class="cols">
+<div class="box"><h4>代表性落点</h4><ul><li>江苏金租：农机厂商租赁、乐租系列数字化</li><li>工程机械与商用车厂商 / 经销商合作</li><li>中小设备零售与区域渠道下沉</li></ul></div>
+<div class="box"><h4>数字化含义</h4><p>渠道门户与批量进件；合作机构与回购管理；评分模型与自动化审批治理；物联网定位与租后巡检；反欺诈与用途监测。</p></div>
+</div>
+</div>
+</div>
+<div class="tab-panel" data-tab-panel="f4">
+<div class="tab-detail">
+<h3>养老金融</h3>
+<p class="muted">康复护理、医院及康养机构设备等。公开可核的专项标杆相对少于科技、绿色、普惠三类，实务上多并入医疗设备或大健康板块观察，表述宜审慎。</p>
+<div class="cols">
+<div class="box"><h4>代表性落点</h4><ul><li>医院影像、检验、康复护理设备直租 / 回租</li><li>康养机构设施与专用设备（个案为主）</li><li>与医疗设备租赁能力复用较多</li></ul></div>
+<div class="box"><h4>数字化含义</h4><p>准入尽调偏医疗设备特征；资质与许可核验；租后巡检与维保记录；残值与二手医疗设备处置合规要求更高。</p></div>
+</div>
+</div>
+</div>
+<div class="tab-panel" data-tab-panel="f5">
+<div class="tab-detail">
+<h3>数字金融</h3>
+<p class="muted">双向含义：一是对客数字化设备与场景（数字化办公、智能终端等可租赁标的）；二是机构对内的数据平台、监管报送与智能能力建设——后者往往是金租差异化与评级相关的主战场。</p>
+<div class="cols">
+<div class="box"><h4>代表性落点</h4><ul><li>对客：数字化、智能化设备直租场景</li><li>对内：交银机船数字化监控；浦银「租赁大脑」类能力；江苏数据平台</li><li>报送、指标与智能体建设并行</li></ul></div>
+<div class="box"><h4>数字化含义</h4><p>数据中台 / 指标与驾驶舱；监管报送与一表通传导；AI 智能体与模型治理；数据安全与信息科技管理（评级权重相关）。</p></div>
+</div>
+</div>
+</div>
+<div class="digi-line"><strong>点睛：</strong>五篇大文章是「往哪投」；回归本源是「怎么投得合规、管得住物」。科技线的算力与绿色线的储能，已有协会增速数据可引用；养老线公开样本少，汇报中宜单独注明。</div>
+</section>
+
+<section class="slide" data-section="市场客户">
+<p class="eyebrow">未来趋势 · 高端制造与机会</p>
+<h2>业务方向 B：高端装备与制造</h2>
+<p class="note" style="margin-bottom:4px">与五篇大文章并列的产业赛道；鼓励清单含工业母机、智能制造等。展业同样须满足直租 / 真租赁物与规范回租要求。</p>
+<div class="hi-grid">
+<div class="viz-card">
+<div class="viz-head"><span class="ico">机</span><h3>国产大飞机 / 船舶与航运装备</h3></div>
+<p>国产民机机队扩张与航运装备更新，是机船基本盘上的结构性增量。农银等公开披露国产飞机机队与客户数量靠前；工银、交银等在航空 / 海事板块持续加码。数字化侧重机队船队台账、适航 / 船级信息、残值与退租转租。</p>
+</div>
+<div class="viz-card">
+<div class="viz-head"><span class="ico">造</span><h3>工业机器人与产线设备更新</h3></div>
+<p>制造业设备更新与智能化改造带动产线、工业机器人、检测与工控设备直租需求。鼓励清单与「新质生产力」表述下，直租交付、安装验收与物全生命周期管理能力要求上升。</p>
+</div>
+<div class="viz-card">
+<div class="viz-head"><span class="ico">工</span><h3>大型工程机械</h3></div>
+<p>新机投放、厂商合作与经营性 / 融资性并存。与普惠线下的工程机械渠道有交叉，但高端与大型设备更强调估值、利用率与再投放；IoT 与租后状态是系统常见增强点。</p>
+</div>
+<div class="viz-card">
+<div class="viz-head"><span class="ico">新</span><h3>商业航天 · 低空等新兴场景</h3></div>
+<p>中银等公开提及低空经济加速布局；招银等有卫星租赁相关公开信息。整体仍处探索与个案验证阶段，书面宜表述为「观察中 / 探索中」，避免写成已形成规模赛道。</p>
+</div>
+</div>
+<p class="note" style="margin:10px 0 2px">补充观察 · 新兴 / 特色场景（不喧宾夺主）</p>
+<div class="opp-grid">
+<div class="opp-card"><h4>机器人租赁 / 智能制造设备</h4><p>与产线更新共振；高值、可定位、可再投放的物更适配直租与经营性深化。</p></div>
+<div class="opp-card"><h4>AI 算力租赁</h4><p>科技金融重点赛道的再呼应；协会算力余额约翻倍，需关注技术迭代与残值。</p></div>
+<div class="opp-card"><h4>机船经营性深化</h4><p>资产交易、退租处置与再投放；经营性余额破万亿后的能力竞争。</p></div>
+<div class="opp-card"><h4>户用 / 分布式光伏批量资产</h4><p>绿色线下的规模化样本（如华夏户用光伏公开口径）；批量台账与监控是关键。</p></div>
+<div class="opp-card"><h4>充电桩 · 储能运营类资产</h4><p>协会储能余额高增；充换电与储能更偏运营类物，认定、监控与收益核算并重。</p></div>
+<div class="opp-card"><h4>数字化能力共性</h4><p>直租交付链路、物数据、残值模型、资产交易台账——贯穿本源与上述赛道。</p></div>
+</div>
+<div class="more" data-more>
+<button type="button" class="more-toggle">More · 数据与表述口径</button>
+<div class="more-panel">
+<ul>
+<li>协会《中国金融租赁行业发展报告（2026）》通稿口径：算力租赁余额约 972.62 亿（+109.89%）；新型储能约 567.32 亿（+154.66%）；直租 1.84 万亿；经营性租赁 1.07 万亿。</li>
+<li>金办发〔2024〕91 号正面清单增补集成电路、算力中心设备等，与科技金融 / 高端制造表述一致。</li>
+<li>商业航天、低空经济：以机构公开年报 / 官网表述为限，培训材料中保持「拓展中 / 探索中」语气。</li>
+</ul>
+<p class="src">中国银行业协会报告及经济参考报等通稿；金办发〔2024〕91 号；相关金租母行年报。</p>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="数字化现状">
+<div class="chapter">
+<p class="eyebrow">第二部分</p>
+<h1>金租公司的数字化能力现状</h1>
+<p class="lead">从基础设施、系统架构与分类、建设厂商、所处阶段、痛点到 AI 需求，形成对行业信息化建设的整体认识。</p>
+</div>
+</section>
+
+<section class="slide" data-section="数字化现状">
+<p class="eyebrow">数据中心与基础设施</p>
+<h2>数据中心与基础设施情况</h2>
+<div class="grid-3">
+<div class="card"><h3>跟发起行 / 金融云</h3><p class="muted">金租主流模式。信创、等保、数据出域与安全基线多跟行；集团金科常参与建设与运维。采购易受短名单约束。</p></div>
+<div class="card"><h3>独立机房 / 专有云</h3><p class="muted">部分大型或产业系金租。自主权较高，改造与运维成本自担；仍需满足金融业安全与监管要求。</p></div>
+<div class="card"><h3>公有云 / SaaS</h3><p class="muted">中小融租更为常见。关注数据驻留、托管资质与等保；金租侧相对谨慎，多用于非核心或创新试点。</p></div>
+</div>
+<ul class="clean" style="margin-top:10px">
+<li><strong>分层差异：</strong>第一梯队多具备较完整的双活 / 灾备与金融云能力；第二梯队受预算与集团统筹影响大；腰部机构基础设施投入更克制。</li>
+<li><strong>对厂商含义：</strong>部署与集成方案需提前确认「是否必须进金融云 / 是否过金科安全评审」。</li>
+</ul>
+</section>
+
+<section class="slide" data-section="数字化现状">
+<p class="eyebrow">系统架构</p>
+<h2>金租公司 IT 系统架构（示意）</h2>
+<div class="arch">
+<div class="arch-row"><div class="arch-label">渠道与门户</div><div class="arch-body">对客 App / 网厅、厂商与经销商门户、移动办公与电签——解决获客、进件与协同效率</div></div>
+<div class="arch-row"><div class="arch-label">业务核心层</div><div class="arch-body">融资租赁核心、经营租赁 / 资产运营、车辆核心、光伏等绿色专项——承载租前租中租后主交易</div></div>
+<div class="arch-row"><div class="arch-label">管理支撑层</div><div class="arch-body">客商 / CRM、资金、财务 / 业财、费控、OA / 人力——支撑内部经营与核算</div></div>
+<div class="arch-row"><div class="arch-label">数据与智能层</div><div class="arch-body">数据仓库 / 大数据 / 数据中台、指标与驾驶舱、风控预警模型、AI 底座与智能体</div></div>
+<div class="arch-row"><div class="arch-label">监管与合规层</div><div class="arch-body">监管报送（1104、EAST 等）、征信、反洗钱、合规管理——对外合规与留痕</div></div>
+<div class="arch-row"><div class="arch-label">集成与安全底座</div><div class="arch-body">ESB / API 网关、统一身份、日志审计、数据安全与信创运行环境</div></div>
+</div>
+<p class="note">示意为培训抽象，具体客户架构因是否跟行、是否金科统建而不同。</p>
+</section>
+
+<section class="slide" data-section="数字化现状">
+<p class="eyebrow">系统分类</p>
+<h2>常见 IT 信息系统：定位与解决的问题</h2>
+<table class="plain compact">
+<thead><tr><th>系统类型</th><th>定位</th><th>重点解决的问题</th></tr></thead>
+<tbody>
+<tr><td>融资租赁核心</td><td>主交易系统</td><td>报价、合同、放款、租金计划、会计引擎、档案；金租标配，替换成本高</td></tr>
+<tr><td>经营租赁核心 / 资产运营</td><td>经营性资产全周期</td><td>资产台账、收益核算、残值、退租 / 转租处置；机船头部常见增强</td></tr>
+<tr><td>车辆核心</td><td>车辆零售 / 车队</td><td>批量进件、GPS、零售风控与贷后；民生、华夏车辆等场景</td></tr>
+<tr><td>光伏等绿色专项</td><td>户用 / 分布式等批量资产</td><td>渠道、户档、运维监测、绿色统计；华夏、浦银等</td></tr>
+<tr><td>客商系统 / CRM</td><td>客户与合作方</td><td>客户视图、渠道商 / 厂商管理、营销线索（如「租赁大脑」类）</td></tr>
+<tr><td>资金系统</td><td>负债与流动性</td><td>授信、提款、头寸、资金计划与预算联动</td></tr>
+<tr><td>财务管理系统</td><td>核算与管会</td><td>业财一体、总账报表、管会分析</td></tr>
+<tr><td>数仓 / 大数据 / 数据中台</td><td>企业数据底座</td><td>整合清洗、主题模型、标准与服务化；数据湖仍少数</td></tr>
+<tr><td>监管报送系统</td><td>对外合规</td><td>1104、EAST、利率、金数、征信等；几乎标配，升版频繁</td></tr>
+<tr><td>报表 / 驾驶舱</td><td>对内经营决策</td><td>指标、预算执行、条线分析；同业调研口径普及约八成</td></tr>
+</tbody>
+</table>
+<div class="more" data-more>
+<button type="button" class="more-toggle">More · 同业建设对照（样本）</button>
+<div class="more-panel">
+<table class="plain compact">
+<thead><tr><th>公司</th><th>特色业务系统</th><th>数据平台</th><th>突出应用</th><th>外部数据</th></tr></thead>
+<tbody>
+<tr><td>国银</td><td>核心/财务/资金/厂商等</td><td>仓+大数据+湖</td><td>监管、报表、资负</td><td>征信、船舶、预警通、万得</td></tr>
+<tr><td>交银</td><td>核心完整</td><td>仓+大数据</td><td>监管、驾驶舱、信用评估、机船管家</td><td>机船、征信、工商、舆情</td></tr>
+<tr><td>江苏</td><td>厂商、汽车库融、乐租</td><td>仓+大数据+湖</td><td>风控预警、数字营销、物估价</td><td>万得、汇利率等</td></tr>
+<tr><td>浦银</td><td>小单、光伏、航航资管</td><td>仓+大数据</td><td>租赁大脑、风控预警</td><td>行业、司法、工商、评级、舆情</td></tr>
+<tr><td>民生</td><td>汽车金融、资管、交易</td><td>仓+大数据</td><td>智慧公共服务、风控预警、物管</td><td>机船、中登、车辆GPS</td></tr>
+<tr><td>招商租赁</td><td>CM-Link保理等</td><td>仓+大数据</td><td>船联网、数据治理综合平台</td><td>船迹、征信</td></tr>
+</tbody>
+</table>
+<p class="src">据《租赁同业数字化建设情况》（2024）脱敏提炼，并与公开报道交叉印证。</p>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="数字化现状">
+<p class="eyebrow">建设厂商</p>
+<h2>IT 系统建设厂商（按系统类型）</h2>
+<table class="plain compact">
+<thead><tr><th>领域</th><th>常见厂商（不完全列举）</th><th>竞争特征</th></tr></thead>
+<tbody>
+<tr><td>核心类</td><td>金证、凯捷、用友、金蝶、汉得、睿民、安硕、九思；另有钐烽、东华、高伟达、宇信、联迪、宏景等</td><td>粘性高、替换难；旁路增强机会多于换芯</td></tr>
+<tr><td>资金管理</td><td>普瑞邦克、汉得、安徽兆尹、用友等</td><td>专业壁垒较高；常与财务 / 核心生态绑定</td></tr>
+<tr><td>数据类（仓/治理/平台）</td><td>华宇、南京科融、先进数通、长亮、金证、中电金信、宇信等</td><td>与报送、治理项目常打包；云厂商有降维压力</td></tr>
+<tr><td>监管报表类</td><td>华宇、南京科融、银丰新融、时代正邦等</td><td>红海、价格敏感；升版与运维粘性仍在</td></tr>
+<tr><td>集团金科</td><td>农银金科、交银金科、北银金科、建信金科等</td><td>集团内守门人与集成方；外部厂商多为联合 / 专项产品方</td></tr>
+<tr><td>融租 SaaS</td><td>信用云、北极贝、金蝶生态应用等</td><td>拼开通速度与年费；与金租项目制分轨</td></tr>
+</tbody>
+</table>
+<div class="callout">见客户前宜先识别：存量核心厂商是谁、监管报送厂商是谁、是否必须联合金科——比先推产品更重要。</div>
+</section>
+
+<section class="slide" data-section="数字化现状">
+<p class="eyebrow">信息化阶段</p>
+<h2>行业信息化建设所处阶段</h2>
+<div class="flow">
+<div class="flow-step"><strong>信息化补齐</strong><span>核心 / 财务 / 资金 / 报送建成</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><strong>数字化深化</strong><span>数仓、驾驶舱、专项业务系统</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><strong>智能化试点</strong><span>风控预警、物联监控、AI 场景</span></div>
+</div>
+<div class="viz-grid-3">
+<div class="viz-card"><div class="viz-head"><span class="ico">普</span><h3>已较普及</h3></div><p>融资租赁核心、财务、资金；监管报送（1104 / EAST 等）；内部报表与高管驾驶舱（同业调研口径约八成）。</p></div>
+<div class="viz-card"><div class="viz-head"><span class="ico">分</span><h3>分层差异大</h3></div><p>光伏 / 车辆等专项核心、厂商渠道、物联网物管：第二梯队与特色机构在补；腰部仍弱。</p></div>
+<div class="viz-card"><div class="viz-head"><span class="ico">先</span><h3>头部领先项</h3></div><p>数据湖 / 湖仓一体、企业级数据治理、大数据风控预警、机船资产监控、场景化 AI——仍集中在第一梯队与少数标杆。</p></div>
+</div>
+<div class="callout">判断：多数金租已过「有没有核心系统」阶段；下一阶段竞争在专项系统、租赁物数据、治理质量与可落地智能。</div>
+</section>
+
+<section class="slide" data-section="数字化现状">
+<p class="eyebrow">建设痛点</p>
+<h2>数字化建设痛点（对应可立项机会）</h2>
+<ul class="pain-list">
+<li><span class="tag">口径</span><div class="body"><strong>业务 / 财务 / 监管三套口径不一致</strong><span class="opp">机会：数据标准、指标口径统一、报送质量治理</span></div></li>
+<li><span class="tag">监管赶工</span><div class="body"><strong>EAST / 报表升版频繁，临时脚本难沉淀</strong><span class="opp">机会：统一报送平台、校验规则库、变更响应运维</span></div></li>
+<li><span class="tag">管物断裂</span><div class="body"><strong>租赁物台账—监测—估值—处置链路不贯通，与 25 号差距大</strong><span class="opp">机会：全生命周期物管、与 EAST 租赁物主题贯通</span></div></li>
+<li><span class="tag">核心难换</span><div class="body"><strong>核心系统替换成本高，只能旁路增强</strong><span class="opp">机会：旁路模块（物管 / 治理 / AI / 报送）与核心厂商联合</span></div></li>
+<li><span class="tag">编制依赖</span><div class="body"><strong>科技编制有限，知识沉淀在驻场厂商 / 金科</strong><span class="opp">机会：可移交的产品化能力、知识库与运维包</span></div></li>
+<li><span class="tag">AI 基础弱</span><div class="body"><strong>数据质量与责任部门不足，AI 停在演示难立项</strong><span class="opp">机会：先治理 / 校验切口，再绑 Agent 与智问 POC</span></div></li>
+</ul>
+<div class="more" data-more>
+<button type="button" class="more-toggle">More · AI 需求与标杆路径</button>
+<div class="more-panel">
+<p><strong>AI 建设需求：</strong>AI 底座（模型网关、知识库、权限审计）；制度智问；合同 / 尽调辅助；报送校验助手；租赁物影像识别；租后预警解释；业务 Agent。约束：脱敏、审计、责任部门；不宜宣称替代核心风控。</p>
+<ul>
+<li><strong>交银：</strong>业财一体 → 监管集市 / 驾驶舱 → 机船管家与航空风险监测。</li>
+<li><strong>江苏：</strong>乐租渠道采集 → 湖仓与标准质量 → 物估价 / 反欺诈 → 数字营销与运营分析。</li>
+<li><strong>浦银 / 民生 / 招商租赁：</strong>租赁大脑；物联网物管 + OCR/RPA；船舶物联网与数据治理综合平台。</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="招采决策">
+<div class="chapter">
+<p class="eyebrow">第三部分</p>
+<h1>招投标方式与决策链条</h1>
+<p class="lead">理解「谁拍板、怎么买、预算紧时评标看什么」，是判断项目可进入性的前提。</p>
+</div>
+</section>
+
+<section class="slide" data-section="招采决策">
+<p class="eyebrow">决策链条</p>
+<h2>金租预算与采购决策的常见模式</h2>
+<table class="plain compact">
+<thead><tr><th>模式</th><th>决策特征</th><th>外部厂商注意点</th></tr></thead>
+<tbody>
+<tr><td>金租内部自主采购</td><td>科技、业务、风险合规、财务会签；相对独立 IT</td><td>可直销；需对齐多角色关注点</td></tr>
+<tr><td>总行 / 发起行把控</td><td>短名单、架构与安全基线、数据出域审核</td><td>先确认是否在短名单 / 能否借道银行生态</td></tr>
+<tr><td>集团金科统筹或联合</td><td>金科集成与运维，外部提供专项产品</td><td>宜联合金科，避免单打独斗拼总包</td></tr>
+<tr><td>集团内部集采 / 框架</td><td>续维、通用软件、云资源等走集采</td><td>关注框架协议与入围节奏</td></tr>
+</tbody>
+</table>
+<ul class="clean" style="margin-top:10px">
+<li><strong>混合情形常见：</strong>业务系统相对独立，监管数据 / 云 / 安全跟行——约访需问清「哪一块必须过总行或金科」。</li>
+<li><strong>关键角色：</strong>科技（架构信创）· 业务条线（投放与管物）· 风险合规（报送口径）· 财务（预算）· 发起行科技 / 金科（短名单）。</li>
+</ul>
+</section>
+
+<section class="slide" data-section="招采决策">
+<p class="eyebrow">招投标与预算</p>
+<h2>常见采购方式与预算收紧下的取向</h2>
+<div class="grid-2">
+<div class="card">
+<h3>采购方式</h3>
+<p class="muted"><strong>多见：</strong>邀请招标、竞争性磋商、竞争性谈判。<br/><strong>相对较少：</strong>公开招标（金额大或制度强制时）。<br/><strong>亦见：</strong>单一来源 / 续建（监管紧急升版、原厂维保延续等）。</p>
+</div>
+<div class="card">
+<h3>预算与评标</h3>
+<p class="muted">近几年 IT 预算普遍承压。价格权重上升，<strong>最低价得满分</strong>情形多见。大而全总包更难；可验收的小切口、联合存量厂商 / 金科更现实。</p>
+</div>
+</div>
+<div class="more" data-more>
+<button type="button" class="more-toggle">More · 预算分层（内部脱敏）与付费习惯</button>
+<div class="more-panel">
+<table class="plain compact">
+<thead><tr><th>分层</th><th>年 IT 预算量级（示意）</th><th>举例印象</th></tr></thead>
+<tbody>
+<tr><td>头部</td><td>约 3500 万–8000 万级</td><td>国银、交银、浙银、浦银、民生、外贸等</td></tr>
+<tr><td>二梯队</td><td>约 1200 万–2500 万级</td><td>农银、华夏、北银、哈银、华融等</td></tr>
+<tr><td>小型</td><td>约 200 万–400 万级</td><td>中煤科工、稠州、广融达等</td></tr>
+</tbody>
+</table>
+<p>数据相关规划约占 IT 预算约 10%，新签落地约 5%——存在共创立项空间。人月示意约 2.5–4.5 万（以公司商务政策为准）；融租 SaaS 多为年费 + 实施费。</p>
+<p class="src">预算为内部调研脱敏口径，勿对外报价引用。</p>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="建设机会">
+<div class="chapter">
+<p class="eyebrow">第四部分</p>
+<h1>未来项目建设机会点</h1>
+<p class="lead">在业务转型、监管加码与预算收紧叠加下，优先关注监管刚需、管物合规、数据治理与可验收的 AI 切口。</p>
+</div>
+</section>
+
+<section class="slide" data-section="建设机会">
+<p class="eyebrow">机会总览</p>
+<h2>七类建设方向（总表）</h2>
+<table class="plain compact">
+<thead><tr><th>方向</th><th>驱动</th><th>建设内容概要</th><th>客群与时机</th></tr></thead>
+<tbody>
+<tr><td>监管报送</td><td>多制度并行、升版频繁</td><td>1104、EAST、人行大集中、利率、金数、征信、反洗钱等</td><td>各层金租；规范发布 / 过渡期 / 检查后</td></tr>
+<tr><td>一表通</td><td>银行全面推广</td><td>明细标准、转换校验、与 EAST/1104 一致性</td><td>共享型金租随发起行 / 金科节奏</td></tr>
+<tr><td>信创</td><td>集团国产化替代</td><td>数据库 / 中间件 / 应用适配与迁移</td><td>跟行集采窗口</td></tr>
+<tr><td>租赁物管理</td><td>管理办法 + 金规25号</td><td>台账、监测、估值、处置、与报送贯通</td><td>金租及大型融租；经营性 / 直租占比高者</td></tr>
+<tr><td>数据治理</td><td>报送质量与评级</td><td>标准、质量、元数据、主数据、指标口径</td><td>有数仓基础、报送痛点明显者</td></tr>
+<tr><td>AI</td><td>效率与质检</td><td>AI底座、Agent、智问；绑校验/租后</td><td>有数据与责任部门的金租</td></tr>
+<tr><td>数据安全</td><td>金规〔2024〕24号等</td><td>分类分级、脱敏、访问控制、审计、专项能力</td><td>集团要求或检查驱动</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="slide" data-section="建设机会">
+<p class="eyebrow">监管报送与一表通</p>
+<h2>监管报送与一表通</h2>
+<ul class="clean">
+<li><strong>监管报送范围：</strong>金监 1104 非现场监管报表；EAST（监管数据标准化，含租赁物等主题域）；人民银行金融统计大集中、金融基础数据库（金数）、利率报备；征信报送与查询；反洗钱；以及区域特色报表、总行并表报表等。</li>
+<li><strong>建设要点：</strong>多源采集、制度变更快速响应、校验规则与质量闭环、与核心 / 数仓接口稳定；从「能报」升级到「报得准、改得快、留得住痕」。</li>
+<li><strong>一表通：</strong>银行机构监管报表「一表通」已进入全面推广（金发〔2025〕20 号等）；目标是明细级标准化、提升时效、减轻多头报送。金租非银行主体，但<strong>深度共享型金租</strong>常被发起行数据体系带着走，外部机会多在转换、一致性校验、主题补齐与联合金科实施。</li>
+</ul>
+<div class="more" data-more>
+<button type="button" class="more-toggle">More · 一表通节奏与报送痛点</button>
+<div class="more-panel">
+<ul>
+<li>媒体披露：部分监管局辖内达标银行须于 2026 年 6 月底前实现报送，另有批次于 2026 年底、2027 年底；双轨并行期内原有系统仍可能继续报送。</li>
+<li>痛点：制度多、口径不一、临时脚本多；租赁物与业务数据质量直接关系 EAST 合规与检查问责。</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="建设机会">
+<p class="eyebrow">信创国产化</p>
+<h2>信创国产化：分层与常见产品</h2>
+<p class="note">金租多跟发起行 / 集团信创规划与集采目录推进；既有「平台 + 应用」打包，也有应用层单独适配，需评估与金科、存量核心兼容。</p>
+<table class="stack-table">
+<thead><tr><th>层级</th><th>常见国产化方向（不完全列举）</th></tr></thead>
+<tbody>
+<tr><td>CPU</td><td>鲲鹏、海光、龙芯、兆芯</td></tr>
+<tr><td>服务器</td><td>基于上述芯片的国产服务器整机（多随集团集采目录）</td></tr>
+<tr><td>操作系统</td><td>中标麒麟、银河麒麟、统信 UOS 等</td></tr>
+<tr><td>关系型数据库</td><td>南大通用、人大金仓、达梦、神通</td></tr>
+<tr><td>分布式数据库</td><td>GoldenDB、TDSQL、TBDS、华为 DWS 等</td></tr>
+<tr><td>中间件</td><td>东方通、金蝶、TAS、宝兰德等</td></tr>
+</tbody>
+</table>
+<div class="callout">项目形态：迁移评估 → 适配改造 → 双轨并行 → 切换与性能 / 安全验收；窗口常与集团信创批次、核心厂商版本计划绑定。</div>
+</section>
+
+<section class="slide" data-section="建设机会">
+<p class="eyebrow">租赁物管理</p>
+<h2>租赁物管理系统：三类建设形态</h2>
+<p class="note">监管驱动：2024 年管理办法 + 金规〔2025〕25 号对管物提出更高要求，并要求全流程信息系统支撑。</p>
+<div class="lease-type">
+<div class="item">
+<span class="ico dark">1</span>
+<div>
+<h3>全生命周期类</h3>
+<p class="muted">侧重台账、权证、价值、保险、运营状态、盘点、维保等通用管理能力；与核心合同 / 放款及 EAST 租赁物数据贯通。适用面广，是多数金租的「管物底座」。</p>
+</div>
+</div>
+<div class="item">
+<span class="ico dark">2</span>
+<div>
+<h3>租赁物运营管理类</h3>
+<p class="muted">侧重设备日常运营与监控，专业性强、物类差异大。例如：车辆运营管理、充电桩运营管理、光伏运维管理等。一般由合作方或金租建设<strong>专门</strong>运营系统，再回传关键状态 / 风险数据至核心或物管平台。</p>
+</div>
+</div>
+<div class="item">
+<span class="ico dark">3</span>
+<div>
+<h3>机船资产管理系统</h3>
+<p class="muted">单体金额大、项目数量相对少。机船规模达到一定体量后，公司常成立子公司承建，或建设独立业务管理系统，覆盖授信审批、合同放款、资产管理等一系列功能（如机船监控、残值与退租处置等）。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide" data-section="建设机会">
+<p class="eyebrow">数据治理 · AI · 数据安全</p>
+<h2>数据治理 · AI · 数据安全</h2>
+<div class="cat-board">
+<div class="cat-col">
+<div class="cat-top"><span class="badge">DATA GOVERNANCE</span><h3>数据治理类</h3><p>把「能报」做成「报得准、用得上」</p></div>
+<div class="cat-body">
+<ul>
+<li>数据标准与指标口径统一</li>
+<li>数据质量检核与问题闭环</li>
+<li>元数据、血缘与影响分析</li>
+<li>客户 / 合同 / 租赁物主数据</li>
+<li>可与报送、一表通、AI 前置绑定立项</li>
+</ul>
+</div>
+<div class="cat-foot">痛点对应：口径不一致、监管赶工脚本化</div>
+</div>
+<div class="cat-col">
+<div class="cat-top"><span class="badge">AI APPLICATION</span><h3>AI 类</h3><p>底座 + Agent + 智问，小切口可验收</p></div>
+<div class="cat-body">
+<ul>
+<li>AI 底座：模型网关、知识库、权限审计</li>
+<li>Agent：报送校验、租后解释、尽调辅助</li>
+<li>智问：制度与知识问答</li>
+<li>影像 / OCR：合同与物证辅助识别</li>
+<li>约束：脱敏、审计、责任部门；不替代核心风控</li>
+</ul>
+</div>
+<div class="cat-foot">痛点对应：AI 基础弱、演示多立项少</div>
+</div>
+<div class="cat-col">
+<div class="cat-top"><span class="badge">DATA SECURITY</span><h3>数据安全类</h3><p>金规〔2024〕24 号等专项能力提升</p></div>
+<div class="cat-body">
+<ul>
+<li>组织责任与数据安全责任制</li>
+<li>分类分级与重要数据识别</li>
+<li>脱敏、访问控制、加密与审计</li>
+<li>安全运营与专项评估</li>
+<li>金租侧常经集团安全基线传导</li>
+</ul>
+</div>
+<div class="cat-foot">与信创、云上线、检查驱动常同批推进</div>
+</div>
+</div>
+<div class="callout">内部能力契合讨论：租赁物全生命周期与 25 号同向；监管数据 + AI 助手对准刚需；姿态宜「可被金科 / 核心集成的专项能力」。产品名待校准。</div>
+</section>
+
+<section class="slide" data-section="附录">
+<p class="eyebrow">附录</p>
+<h2>主要资料来源</h2>
+<ul class="clean">
+<li>国务院公报 / 金融监管总局：《金融租赁公司管理办法》（2024）；金规〔2025〕25 号；金规〔2023〕8 号；金办发〔2024〕91 号；金规〔2024〕24 号数据安全办法；监管评级办法答记者问</li>
+<li>中国银行业协会《中国金融租赁行业发展报告（2026）》及经济参考报等通稿</li>
+<li>公司官网与年报：华夏金租、江苏金租、招银金租社会责任报告、交行 / 招行年报子公司段落</li>
+<li>媒体：证券日报机船管家；上证报；21 世纪经济报道；移动支付网一表通解读等</li>
+<li>同业调研：《租赁同业数字化建设情况》（2024）；IT 预算分层为内部脱敏口径</li>
+<li>行业资讯参考（跟踪用，正式数据仍以监管 / 协会 / 年报为准）：租赁杂谈；全球租赁业竞争力论坛（及租赁观察网一类平台）；金融租赁及融资租赁圈</li>
+</ul>
+</section>
+
+<section class="slide" data-section="结束">
+<p class="eyebrow">结束</p>
+<h1>市场 · 数字化 · 招采 · 机会</h1>
+<p class="lead">金租市场集中度提升、监管与业务双轮驱动回归本源并布局五篇大文章；信息化已过「有核心」阶段，差异在专项系统、物数据、治理与智能；招采受金科与价格导向约束；建设机会仍集中在监管报送与一表通传导、租赁物管理、数据治理、信创、AI 与数据安全等可验收方向。</p>
+<div class="meta-row"><span class="pill">← → 翻页</span><span class="pill">融信云内部交流材料</span></div>
+</section>
+
+</div><div class="footerbar"><div class="progress-wrap"><div class="progress-bar" id="progress"></div></div>
+<div class="nav"><span class="hint">键盘 ← →</span><button type="button" id="prevBtn">上一页</button>
+<span id="pageNum">1 / 1</span><button type="button" id="nextBtn">下一页</button></div></div></div>
+<script>
+(function(){
+  const slides=Array.from(document.querySelectorAll('.slide'));
+  const progress=document.getElementById('progress');
+  const pageNum=document.getElementById('pageNum');
+  const sectionLabel=document.getElementById('sectionLabel');
+  let index=0;
+  function show(i){
+    index=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach((s,n)=>s.classList.toggle('active',n===index));
+    progress.style.width=((index+1)/slides.length*100)+'%';
+    pageNum.textContent=(index+1)+' / '+slides.length;
+    sectionLabel.textContent=slides[index].dataset.section||'';
+  }
+  document.getElementById('prevBtn').addEventListener('click',()=>show(index-1));
+  document.getElementById('nextBtn').addEventListener('click',()=>show(index+1));
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown')show(index+1);
+    if(e.key==='ArrowLeft'||e.key==='PageUp')show(index-1);
+  });
+  document.querySelectorAll('[data-more]').forEach(wrap=>{
+    const btn=wrap.querySelector('.more-toggle');
+    if(!btn)return;
+    const label=btn.textContent.replace(/^More ·\s*/,'');
+    btn.dataset.label=label;
+    btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      const open=wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      btn.textContent=open?'收起':'More · '+btn.dataset.label;
+    });
+  });
+  document.querySelectorAll('[data-tabs]').forEach(tabs=>{
+    const btns=tabs.querySelectorAll('.tab-btn');
+    const parent=tabs.parentElement;
+    btns.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const id=btn.dataset.tab;
+        btns.forEach(b=>b.classList.toggle('active',b===btn));
+        parent.querySelectorAll(':scope > .tab-panel').forEach(p=>{
+          p.classList.toggle('active',p.dataset.tabPanel===id);
+        });
+      });
+    });
+  });
+  show(0);
+})();
+</script></body></html>
